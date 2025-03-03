@@ -1,0 +1,12 @@
+== Components and properties
+
+Previous extensions to the calendaring standards have been largely restricted to the
+addition of properties or parameters. This is partly because iCalendar libraries had
+trouble handling components nested deeper than those defined in <<RFC5545>>.
+
+In a break with this 'tradition' this specification defines a number of components
+rather than properties. This is a better match for the way <<W3C.REC-xml-20081126>> and JSON <<RFC8259>> handle such
+structures and allows richer definitions.
+
+It also allows for the addition of extra properties inside the components and
+resolves some of the problems of trying to add detailed information as a parameter.

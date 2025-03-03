@@ -1,0 +1,11 @@
+[acknowledgments]
+== Acknowledgements
+
+The author would like to thank Chuck Norris of eventful.com for his work which led
+to the development of this RFC.
+
+The author would also like to thank the members of CalConnect, The Calendaring and
+Scheduling Consortium, the Event Publication technical committee and the following
+individuals for contributing their ideas and support:
+
+Cyrus Daboo, John Haug, Dan Mendell, Ken Murchison, Scott Otis.

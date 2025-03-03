@@ -1,0 +1,21 @@
+== References
+
+[bibliography]
+=== Normative References
+
+* [[[RFC2119,RFC 2119]]]
+* [[[RFC2426,RFC 2426]]]
+* [[[RFC3986,RFC 3986]]]
+* [[[RFC4589,RFC 4589]]]
+* [[[RFC5545,RFC 5545]]]
+* [[[RFC5546,RFC 5546]]]
+* [[[RFC7986,RFC 7986]]]
+* [[[RFC8126,RFC 8126]]]
+* [[[RFC8174,RFC 8174]]]
+* [[[RFC8259,RFC 8259]]]
+* [[[W3C.REC-html51-20171003,W3C.REC-html51-20171003]]], Faulkner, S., Eicholz, A., Leithead, T. and A. Danilo, "HTML 5.1 2nd Edition",
+World Wide Web Consortium Recommendation REC-html51-20171003, October
+2017.
+* [[[W3C.REC-xml-20081126,W3C.REC-xml-20081126]]], Bray, T., Paoli, J., Sperberg-McQueen, M., Maler, E. and F. Yergeau,
+"Extensible Markup Language (XML) 1.0 (Fifth Edition)", World Wide Web
+Consortium Recommendation REC-xml-20081126, November 2008.

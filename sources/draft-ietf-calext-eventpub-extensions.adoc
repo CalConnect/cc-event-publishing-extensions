@@ -1,0 +1,53 @@
+= Event Publishing Extensions to iCalendar
+:doctype: internet-draft
+:docnumber: draft-ietf-calext-eventpub-extensions-19
+:status: standard
+:ipr: trust200902
+:area: Applications
+:workgroup: Calendaring Extensions
+:keywords: icalendar, properties
+:published-date: 2021-03-26
+:updates: IETF RFC 5545
+:fullname: Michael Douglass
+:lastname: Douglass
+:forename_initials: M.
+:affiliation: Bedework
+:address: 226 3rd Street + \
+Troy, NY 12180 + \
+United States of America
+:email: mdouglass@bedework.com
+:contributor-uri: http://bedework.com
+:mn-document-class: ietf
+:mn-output-extensions: xml,rfc,txt,html,rxl
+:local-cache-only:
+:data-uri-image:
+
+include::sections-ietf/00-abstract.adoc[]
+
+include::sections/01-introduction.adoc[]
+
+include::sections/02-components-and-properties.adoc[]
+
+include::sections/03-typed-references.adoc[]
+
+include::sections/04-modifications.adoc[]
+
+include::sections/05-new-property-parameters.adoc[]
+
+include::sections/06-new-properties.adoc[]
+
+include::sections/07-new-components.adoc[]
+
+include::sections/08-extended-examples.adoc[]
+
+include::sections/09-security-considerations.adoc[]
+
+include::sections/10-privacy-considerations.adoc[]
+
+include::sections/11-iana-considerations.adoc[]
+
+include::sections/12-acknowledgements.adoc[]
+
+include::sections-ietf/99-references.adoc[]
+
+include::sections-ietf/99-changelog.adoc[]

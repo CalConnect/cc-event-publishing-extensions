@@ -1,0 +1,46 @@
+== Security Considerations
+
+This specification extends <<RFC5545>> and makes further use of possibly linked data.
+While calendar data is not unique in this regard it is worth reminding
+implementors of some of the dangers and safeguards.
+
+=== URIs
+
+See <<RFC3986>> for a discussion of the security considerations relating to URIs.
+Because of the issues discussed there and below, clients SHOULD NOT follow URIs
+and fetch content automatically, and should only do so at the explicit request of
+the user.
+
+Fetching remote resources carries inherent risks. Connections must only be
+allowed on well known ports, using allowed protocols (generally just HTTP/HTTPS
+on their default ports). The URL must be resolved externally and not allowed to
+access internal resources. Connecting to an external source reveals IP (and
+therefore generally location) information.
+
+A maliciously constructed iCalendar object may contain a very large number of
+URIs. In the case of published calendars with a large number of subscribers, such
+objects could be widely distributed. Implementations should be careful to limit
+the automatic fetching of linked resources to reduce the risk of this being an
+amplification vector for a denial-of-service attack.
+
+=== Malicious Content
+
+For the "STRUCTURED-DATA" property, agents need to be aware that a client could
+attack underlying storage by sending extremely large values and could attack
+processing time by uploading a recurring event with a large number of overrides
+and then repeatedly adding, updating and deleting structured data.
+
+Agents should set reasonable limits on storage size and number of instances and
+apply those constraints. Calendar protocols should ensure there is a way to
+report on such limits being exceeded.
+
+Malicious content could be introduced into the calendar server by way of the
+"STRUCTURED-DATA" property and propagated to many end users via scheduling.
+Servers SHOULD check this property for malicious or inappropriate content. Upon
+detecting such content, servers SHOULD remove the property.
+
+=== HTML Content
+
+When processing HTML content, applications need to be aware of the many security
+and privacy issues, as described in the IANA considerations section of
+<<W3C.REC-html51-20171003>>.

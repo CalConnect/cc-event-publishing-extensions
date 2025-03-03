@@ -1,0 +1,32 @@
+== Privacy Considerations
+
+=== Tracking
+
+Properties with a "URI" value type can expose their users to privacy leaks as any
+network access of the URI data can be tracked both by a network observer and by the
+entity hosting the remote resource. Clients SHOULD NOT automatically download data
+referenced by the URI without explicit instruction from users.
+
+To help alleviate some of the concerns protocols and services could provide proxy
+services for downloading referenced data.
+
+=== Revealing Locations
+
+The addition of location information to the new participant component provides
+information about the location of participants at a given time. This information
+MUST NOT be distributed to other participants without those participant's express
+permission. Note that there may be a number of participants who may be unaware of
+their inclusion in the data.
+
+Agents processing and distributing calendar data must be aware that it has the
+property of providing information about a future time when a given individual may
+be at a particular location, which could enable targeted attacks against that
+individual.
+
+The same may be true of other information contained in the participant component.
+In general, revealing only as much as is absolutely necessary should be the
+approach taken.
+
+For example, there may be some privacy considerations relating to the ORDER
+parameter, as it provides an indication of the organizer's perception of the
+relative importance of other participants.

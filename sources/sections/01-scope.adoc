@@ -1,0 +1,6 @@
+== Scope
+
+//This document specifies extensions to the iCalendar specification (<<RFC5545>>) to
+//support enhanced event publishing capabilities and social networking features. It
+//defines new properties and components that enable richer event descriptions, structured
+//location data, and participant information.

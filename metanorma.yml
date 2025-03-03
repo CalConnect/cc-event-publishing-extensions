@@ -1,0 +1,10 @@
+---
+metanorma:
+  source:
+    files:
+      - sources/cc-51021.adoc
+      - sources/draft-ietf-calext-eventpub-extensions.adoc
+
+  collection:
+    organization: CalConnect
+    name: Event Publishing Extensions to iCalendar

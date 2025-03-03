@@ -1,0 +1,120 @@
+[[new_property_parameters]]
+== New Property Parameters
+
+[[parameter_order]]
+=== Order
+
+Parameter name:: ORDER
+
+Purpose:: To define ordering for the associated property.
+
+Format Definition:: This parameter is defined by the following notation:
++
+[source%unnumbered]
+----
+orderparam    = "ORDER" "=" integer
+                ;           Must be greater than or equal to 1
+----
+
+Description:: The ORDER parameter is OPTIONAL and is used to indicate the
+relative ordering of the corresponding instance of a property. Its value MUST be
+an integer greater than or equal to 1 that specifies the order with 1 being the
+first in the ordering.
++
+When the parameter is absent, the default MUST be to interpret the property
+instance as being ordered last, that is, the property will appear after any other
+instances of the same property with any value of ORDER.
++
+When any ORDER parameters have the same value all the associated properties
+appear as a group within which there is no defined order.
++
+Note that the value of this parameter is to be interpreted only in relation to
+values assigned to other corresponding instances of the same property in the same
+entity.
++
+This parameter MUST NOT be applied to a property that does not allow multiple
+instances.
+
+Example uses:: The ORDER may be applied to the PARTICIPANT-TYPE property to
+indicate the relative importance of the participant, for example as a sponsor or
+a performer. For example, ORDER=1 could define the principal performer or soloist.
+
+[[parameter_schema]]
+=== Schema
+
+Parameter Name:: SCHEMA
+
+Purpose:: To specify the schema used for the content of a "STRUCTURED-DATA"
+property value.
+
+Format Definition:: This parameter is defined by the following notation:
++
+[source%unnumbered]
+----
+schemaparam    = "SCHEMA" "=" DQUOTE uri DQUOTE
+----
+
+Description:: This property parameter SHOULD be specified on "STRUCTURED-DATA"
+properties. When present it provides identifying information about the nature of
+the content of the corresponding "STRUCTURED-DATA" property value. This can be
+used to supplement the media type information provided by the "FMTTYPE" parameter
+on the corresponding property.
+
+Example::
++
+[source%unnumbered]
+----
+STRUCTURED-DATA;FMTTYPE=application/ld+json;
+ SCHEMA="https://schema.org/FlightReservation";
+ ENCODING=BASE64;VALUE=BINARY:ICAgIDxzY3JpcHQgdHlwZT0iYXBwb
+ GljYXRpb24vbGQranNvbiI+CiAgICB7CiAgICAgICJAY29udGV4dCI6ICJodHRwOi8vc2NoZW1hLm9yZyIsCiAgICAgICJAdHlwZSI
+ 6ICJGbGlnaHRSZXNlcnZhdGlvbiIsCiAgICAgICJyZXNlcnZhdGlvbklkIjogIlJYSjM0UCIsCiAgICAgICJyZXNlcnZhdGlvblN0
+ YXR1cyI6ICJodHRwOi8vc2NoZW1hLm9yZy9SZXNlcnZhdGlvbkNvbmZpcm1lZCIsCiAgICAgICJwYXNzZW5nZXJQcmlvcml0eVN0
+ YXR1cyI6ICJGYXN0IFRyYWNrIiwKICAgICAgInBhc3NlbmdlclNlcXVlbmNlTnVtYmVyIjogIkFCQzEyMyIsCiAgICAgICJzZWN1
+ cml0eVNjcmVlbmluZyI6ICJUU0EgUHJlQ2hlY2siLAogICAgICAidW5kZXJOYW1lIjogewogICAgICAgICJAdHlwZSI6ICJQZXJzb
+ 24iLAogICAgICAgICJuYW1lIjogIkV2YSBHcmVlbiIKICAgICAgfSwKICAgICAgInJlc2VydmF0aW9uRm9yIjogewogICAgICAgIC
+ JAdHlwZSI6ICJGbGlnaHQiLAogICAgICAgICJmbGlnaHROdW1iZXIiOiAiVUExMTAiLAogICAgICAgICJwcm92aWRlciI6IHsKIC
+ AgICAgICAgICJAdHlwZSI6ICJBaXJsaW5lIiwKICAgICAgICAgICJuYW1lIjogIkNvbnRpbmVudGFsIiwKICAgICAgICAgICJpYX
+ RhQ29kZSI6ICJDTyIsCiAgICAgICAgICAiYm9hcmRpbmdQb2xpY3kiOiAiaHR0cDovL3NjaGVtYS5vcmcvWm9uZUJvYXJkaW5nUG
+ 9saWN5IgogICAgICAgIH0sCiAgICAgICAgInNlbGxlciI6IHsKICAgICAgICAgICJAdHlwZSI6ICJBaXJsaW5lIiwKICAgICAgICA
+ gICJuYW1lIjogIlVuaXRlZCIsCiAgICAgICAgICAiaWF0YUNvZGUiOiAiVUEiCiAgICAgICAgfSwKICAgICAgICAiZGVwYXJ0dXJ
+ lQWlycG9ydCI6IHsKICAgICAgICAgICJAdHlwZSI6ICJBaXJwb3J0IiwKICAgICAgICAgICJuYW1lIjogIlNhbiBGcmFuY2lzY28
+ gQWlycG9ydCIsCiAgICAgICAgICAiaWF0YUNvZGUiOiAiU0ZPIgogICAgICAgIH0sCiAgICAgICAgImRlcGFydHVyZVRpbWUiOiA
+ iMjAxNy0wMy0wNFQyMDoxNTowMC0wODowMCIsCiAgICAgICAgImFycml2YWxBaXJwb3J0IjogewogICAgICAgICAgIkB0eXBlIjo
+ gIkFpcnBvcnQiLAogICAgICAgICAgIm5hbWUiOiAiSm9obiBGLiBLZW5uZWR5IEludGVybmF0aW9uYWwgQWlycG9ydCIsCiAgICA
+ gICAgICAiaWF0YUNvZGUiOiAiSkZLIgogICAgICAgIH0sCiAgICAgICAgImFycml2YWxUaW1lIjogIjIwMTctMDMtMDVUMDY6MzA
+ 6MDAtMDU6MDAiCiAgICAgIH0KICAgIH0KICAgIDwvc2NyaXB0Pg==
+----
+
+[[parameter_derived]]
+=== Derived
+
+Parameter Name:: DERIVED
+
+Purpose:: To specify that the value of the associated property is derived from
+some other property value or values.
+
+Format Definition:: This parameter is defined by the following notation:
++
+[source%unnumbered]
+----
+derivedparam    = "DERIVED" "=" ("TRUE" / "FALSE")
+; Default is FALSE
+----
+
+Description:: This property parameter MAY be specified on any property when the
+value is derived from some other property or properties. When present with a
+value of TRUE clients MUST NOT update the property.
++
+As an example, if a STYLED-DESCRIPTION property is present with
+FMTTYPE="application/rtf" then there may be an additional STYLED-DESCRIPTION
+property with FMTTYPE="text/html" and DERIVED=TRUE and a value created from the
+rtf value.
+
+Example::
++
+[source%unnumbered]
+----
+STYLED-DESCRIPTION;FMTTYPE=text/html;
+ DERIVED=TRUE:<html>...</html>
+----

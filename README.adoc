@@ -1,0 +1,68 @@
+= CalConnect Standard: Event Publishing Extensions to iCalendar
+
+This work item belongs to CalConnect CALENDAR TC.
+
+image:https://github.com/CalConnect/cc-event-publishing-extensions/workflows/generate/badge.svg["Build Status", link="https://github.com/CalConnect/cc-event-publishing-extensions/actions?workflow=generate"]
+
+This document is available in its rendered forms here:
+
+* https://calconnect.github.io/cc-event-publishing-extensions/[Event Publishing Extensions to iCalendar (HTML)]
+
+== General
+
+This document specifies the Event Publishing Extensions to iCalendar.
+
+The document is published as the following:
+
+* CalConnect Standard: CC 51021
+* IETF RFC: draft-ietf-calext-eventpub-extensions
+
+
+== Fetching the document
+
+[source,sh]
+----
+git clone https://github.com/CalConnect/cc-event-publishing-extensions/
+----
+
+
+== Installing build tools
+
+See https://www.metanorma.com/author/topics/install/
+
+
+== Running via Docker or locally
+
+If you have installed the build tools locally, and wish to run the
+locally-installed compilation tools, there is nothing further to set.
+
+If you don't want to deal with local dependencies, use the docker:
+
+[source,sh]
+----
+docker run -v "$(pwd)":/metanorma -w /metanorma -it metanorma/mn metanorma site generate --agree-to-terms
+----
+
+
+== Building the document
+
+[source,sh]
+----
+metanorma site generate --agree-to-terms
+----
+
+The generated documents are accessible under `_site/`.
+
+
+== Iterating the document
+
+[source,sh]
+----
+metanorma site generate --agree-to-terms
+open _site/index.html
+----
+
+
+== License
+
+Copyright its respective authors and CalConnect.

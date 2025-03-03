@@ -1,0 +1,50 @@
+= Event Publishing Extensions to iCalendar
+:docnumber: 51021
+:copyright-year: 2021
+:language: en
+:doctype: standard
+:edition: 1
+:status: working-draft
+:revdate: 2021-03-26
+:published-date: 2021-03-26
+:technical-committee: CALENDAR
+:fullname: Michael Douglass
+:surname: Douglass
+:givenname: Michael
+:affiliation: Bedework
+:mn-document-class: cc
+:mn-output-extensions: xml,html,pdf,rxl
+:local-cache-only:
+:data-uri-image:
+
+include::sections/00-abstract.adoc[]
+
+include::sections/01-scope.adoc[]
+
+include::sections/01-introduction.adoc[]
+
+include::sections/02-norm-refs.adoc[]
+
+include::sections/03-terms.adoc[]
+
+include::sections/02-components-and-properties.adoc[]
+
+include::sections/03-typed-references.adoc[]
+
+include::sections/04-modifications.adoc[]
+
+include::sections/05-new-property-parameters.adoc[]
+
+include::sections/06-new-properties.adoc[]
+
+include::sections/07-new-components.adoc[]
+
+include::sections/08-extended-examples.adoc[]
+
+include::sections/09-security-considerations.adoc[]
+
+include::sections/10-privacy-considerations.adoc[]
+
+include::sections/11-iana-considerations.adoc[]
+
+include::sections/12-acknowledgements.adoc[]

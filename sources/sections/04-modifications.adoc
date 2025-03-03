@@ -1,0 +1,46 @@
+== Modifications to Calendar Components
+
+The following changes to the syntax defined in <<RFC5545>> are made here. New
+elements are defined in subsequent sections.
+
+[source%unnumbered]
+----
+; Addition of PARTICIPANT, VLOCATION and VRESOURCE
+; as valid components
+eventc     = "BEGIN" ":" "VEVENT" CRLF
+             eventprop *alarmc *participantc *locationc *resourcec
+             "END" ":" "VEVENT" CRLF
+
+; Addition of properties STYLED-DESCRIPTION and STRUCTURED-DATA
+eventprop  =/ *styleddescription
+              *sdataprop
+
+; Addition of PARTICIPANT, VLOCATION and VRESOURCE
+; as valid components
+todoc      = "BEGIN" ":" "VTODO" CRLF
+             todoprop *alarmc *participantc *locationc *resourcec
+             "END" ":" "VTODO" CRLF
+
+; Addition of properties STYLED-DESCRIPTION, STRUCTURED-DATA
+todoprop =/ *styleddescription
+            *sdataprop
+
+; Addition of PARTICIPANT, VLOCATION and VRESOURCE
+; as valid components
+journalc   = "BEGIN" ":" "VJOURNAL" CRLF
+             jourprop *participantc *locationc *resourcec
+             "END" ":" "VJOURNAL" CRLF
+
+; Addition of properties STYLED-DESCRIPTION, STRUCTURED-DATA
+jourprop =/ *styleddescription
+            *sdataprop
+
+; Addition of PARTICIPANT, VLOCATION and VRESOURCE
+; as valid components
+freebusyc  = "BEGIN" ":" "VFREEBUSY" CRLF
+             fbprop *participantc *locationc *resourcec
+             "END" ":" "VFREEBUSY" CRLF
+
+; Addition of property STYLED-DESCRIPTION
+fbprop     =/ *styleddescription
+----

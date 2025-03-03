@@ -1,0 +1,267 @@
+[[new_components]]
+== New Components
+
+[[participant]]
+=== Participant
+
+Component name:: PARTICIPANT
+
+Purpose:: This component provides information about a participant in an event or
+task.
+
+Conformance:: This component can be specified multiple times in a "VEVENT",
+"VTODO", "VJOURNAL" or "VFREEBUSY" calendar component.
+
+Description:: This component provides information about a participant in a
+calendar component. A participant may be an attendee in a scheduling sense and
+the ATTENDEE property may be specified in addition. Participants can be
+individuals or organizations, for example a soccer team, the spectators or the
+musicians.
++
+--
+STRUCTURED-DATA properties if present may refer to definitions of the participant
+- such as a vCard.
+
+The CALENDAR-ADDRESS property if present will provide a cal-address. If an
+ATTENDEE property has the same value the participant is considered schedulable.
+The PARTICIPANT component can be used to contain additional meta-data related to
+the attendee.
+--
+
+Format Definition:: This component is defined by the following notation:
++
+[source%unnumbered]
+----
+participantc = "BEGIN" ":" "PARTICIPANT" CRLF
+               partprop *locationc *resourcec
+               "END" ":" "PARTICIPANT" CRLF
+
+partprop     = *(
+               ;
+               ; The following are REQUIRED,
+               ; but MUST NOT occur more than once.
+               ;
+               participanttype / uid /
+               ;
+               ; The following are OPTIONAL,
+               ; but MUST NOT occur more than once.
+               ;
+               calendaraddress / created / description / dtstamp /
+               geo / last-mod / priority / seq /
+               status / summary / url /
+               ;
+               ; The following are OPTIONAL,
+               ; and MAY occur more than once.
+               ;
+               attach / categories / comment /
+               contact / location / rstatus / related /
+               resources / strucloc / strucres / styleddescription /
+               sdataprop / iana-prop
+               ;
+               )
+----
+
+Note:: When the PRIORITY is supplied it defines the ordering of PARTICIPANT
+components with the same value for the PARTICIPANT-TYPE property.
+
+Privacy Issues:: When a LOCATION is supplied it provides information about the
+location of a participant at a given time or times. This may represent an
+unacceptable privacy risk for some participants. User agents MUST NOT broadcast
+this information without the express permission of the participants whose
+location would be exposed.
+
+Example:: The following is an example of this component. It contains a
+STRUCTURED-DATA property which points to a vCard providing information about the
+event participant.
++
+[source%unnumbered]
+----
+BEGIN:PARTICIPANT
+UID: em9lQGZvb2GFtcGxlLmNvbQ
+PARTICIPANT-TYPE:PERFORMER
+STRUCTURED-DATA;VALUE=URI:
+ http://dir.example.com/vcard/aviolinist.vcf
+END:PARTICIPANT
+----
+
+Example:: The following is an example for the primary contact.
++
+[source%unnumbered]
+----
+BEGIN:PARTICIPANT
+UID: em9lQGZvb2GFtcGxlLmNvbQ
+STRUCTURED-DATA;VALUE=URI;
+ http://dir.example.com/vcard/contacts/contact1.vcf
+PARTICIPANT-TYPE:CONTACT
+DESCRIPTION:A contact
+END:PARTICIPANT
+----
+
+Example:: The following is an example for a participant with contact and location.
++
+[source%unnumbered]
+----
+BEGIN:PARTICIPANT
+UID: em9lQGZvb2GFtcGxlLmNdrt
+STRUCTURED-DATA;VALUE=URI;
+ http://dir.example.com/vcard/contacts/my-card.vcf
+PARTICIPANT-TYPE:SPEAKER
+DESCRIPTION:A participant
+BEGIN:VLOCATION
+UID:123456-abcdef-98765432
+NAME:My home location
+STRUCTURED-DATA;VALUE=URI:
+ http://dir.example.com/addresses/my-home.vcf
+END:VLOCATION
+END:PARTICIPANT
+----
+
+[[schedulable-participant]]
+==== Schedulable Participant
+
+A PARTICIPANT component may represent someone or something that needs to be
+scheduled as defined for ATTENDEE in <<RFC5545>> and <<RFC5546>>. The PARTICIPANT
+component may also represent someone or something that is NOT to receive
+scheduling messages.
+
+For backwards compatibility with existing clients and servers when used to
+schedule events and tasks the ATTENDEE property MUST be used to specify the
+scheduling parameters as defined for that property.
+
+For other, future uses the CALENDAR-ADDRESS property MUST be used to specify
+those parameters.
+
+A PARTICIPANT component is defined to be schedulable if:
+
+* It contains a CALENDAR-ADDRESS property
+* That property value is the same as the value for an ATTENDEE property.
+
+If both of these conditions apply then the participant defined by the value of
+the URL property will take part in scheduling operations as defined in <<RFC5546>>.
+
+An appropriate use for the PARTICIPANT component in scheduling would be to store
+SEQUENCE and DTSTAMP properties associated with replies from each ATTENDEE. A
+LOCATION property within the PARTICIPANT component might allow better selection
+of meeting times when participants are in different timezones.
+
+[[vlocation]]
+=== Location
+
+Component name:: VLOCATION
+
+Purpose:: This component provides rich information about the location of an event
+using the structured data property or optionally a plain text typed value.
+
+Conformance:: This component can be specified multiple times in a "VEVENT",
+"VTODO", "VJOURNAL", "VFREEBUSY" or "PARTICIPANT" calendar component.
+
+Description:: There may be a number of locations associated with an event. This
+component provides detailed information about a location.
++
+When used in a component the value of this property provides information about
+the event venue or of related services such as parking, dining, stations etc.
++
+STRUCTURED-DATA properties if present may refer to representations of the
+location - such as a vCard.
+
+Format Definition:: This component is defined by the following notation:
++
+[source%unnumbered]
+----
+locationc    = "BEGIN" ":" "VLOCATION" CRLF
+               locprop
+               "END" ":" "VLOCATION" CRLF
+
+locprop      = *(
+               ;
+               ; The following are REQUIRED,
+               ; but MUST NOT occur more than once.
+               ;
+               uid /
+               ;
+               ; The following are OPTIONAL,
+               ; but MUST NOT occur more than once.
+               ;
+               description / geo / loctype / name /
+               ;
+               ; The following are OPTIONAL,
+               ; and MAY occur more than once.
+               ;
+               sdataprop / iana-prop
+----
+
+The NAME property is defined in <<RFC7986>>.
+
+Example:: The following is an example of this component. It points to a venue.
++
+[source%unnumbered]
+----
+BEGIN:VLOCATION
+UID:123456-abcdef-98765432
+NAME:The venue
+STRUCTURED-DATA;VALUE=URI:
+ http://dir.example.com/venues/big-hall.vcf
+END:VLOCATION
+----
+
+[[vresource]]
+=== Resource
+
+Component name:: VRESOURCE
+
+Purpose:: This component provides a typed reference to external information about
+a resource or optionally a plain text typed value. Typically a resource is
+anything that might be required or used by a calendar entity and possibly has a
+directory entry.
+
+Conformance:: This component can be specified multiple times in a "VEVENT",
+"VTODO", "VJOURNAL", "VFREEBUSY" or "PARTICIPANT" calendar component.
+
+Description:: When used in a component this component provides information about
+resources used for the event such as rooms, projectors, conferencing capabilities.
++
+The RESOURCE-TYPE value registry provides a place in which resource types may be
+registered.
++
+STRUCTURED-DATA properties if present may refer to representations of the
+resource - such as a vCard.
+
+Format Definition:: This component is defined by the following notation:
++
+[source%unnumbered]
+----
+resourcec    = "BEGIN" ":" "VRESOURCE" CRLF
+               resprop
+               "END" ":" "VRESOURCE" CRLF
+
+resprop      = *(
+               ;
+               ; The following are REQUIRED,
+               ; but MUST NOT occur more than once.
+               ;
+               uid /
+               ;
+               ; The following are OPTIONAL,
+               ; but MUST NOT occur more than once.
+               ;
+               description / geo / name / restype /
+               ;
+               ; The following are OPTIONAL,
+               ; and MAY occur more than once.
+               ;
+               sdataprop / iana-prop
+----
+
+The NAME property is defined in <<RFC7986>>
+
+Example:: The following is an example of this component. It refers to a projector.
++
+[source%unnumbered]
+----
+BEGIN:VRESOURCE
+UID:456789-abcdef-98765432
+NAME:The projector
+RESOURCE-TYPE:projector
+STRUCTURED-DATA;VALUE=URI:http://dir.example.com/projectors/3d.vcf
+END:VRESOURCE
+----

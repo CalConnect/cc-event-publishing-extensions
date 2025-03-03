@@ -1,0 +1,75 @@
+== Extended examples
+
+The following are some examples of the use of the properties defined in this
+specification. They include additional properties defined in <<RFC7986>> which
+includes IMAGE.
+
+=== Example 1
+
+The following is an example of a VEVENT describing a concert. It includes
+location information for the venue itself as well as references to parking and
+restaurants.
+
+[source%unnumbered]
+----
+BEGIN:VEVENT
+CREATED:20200215T145739Z
+DESCRIPTION: Piano Sonata No 3\n
+ Piano Sonata No 30
+DTSTAMP:20200215T145739Z
+DTSTART;TZID=America/New_York:20200315T150000Z
+DTEND;TZID=America/New_York:20200315T163000Z
+LAST-MODIFIED:20200216T145739Z
+SUMMARY:Beethoven Piano Sonatas
+UID:123456
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:h
+ ttp://example.com/images/concert.png
+BEGIN:PARTICIPANT
+PARTICIPANT-TYPE:SPONSOR
+UID:dG9tQGZvb2Jhci5xlLmNvbQ
+STRUCTURED-DATA;VALUE=URI:http://example.com/sponsor.vcf
+END:PARTICIPANT
+BEGIN:PARTICIPANT
+PARTICIPANT-TYPE:PERFORMER:
+UID:em9lQGZvb2GFtcGxlLmNvbQ
+STRUCTURED-DATA;VALUE=URI:http://www.example.com/people/johndoe.vcf
+END:PARTICIPANT
+BEGIN:VLOCATION
+UID:123456-abcdef-98765432
+NAME:The venue
+STRUCTURED-DATA;VALUE=URI:http://dir.example.com/venues/big-hall.vcf
+END:VLOCATION
+BEGIN:VLOCATION
+UID:123456-abcdef-87654321
+NAME:Parking for the venue
+STRUCTURED-DATA;VALUE=URI:http://dir.example.com/venues/parking.vcf
+END:VLOCATION
+END:VEVENT
+----
+
+=== Example 2
+
+The following is an example of a VEVENT describing a meeting. One of the
+attendees is a remote participant.
+
+[source%unnumbered]
+----
+BEGIN:VEVENT
+CREATED:20200215T145739Z
+DTSTAMP:20200215T145739Z
+DTSTART;TZID=America/New_York:20200315T150000Z
+DTEND;TZID=America/New_York:20200315T163000Z
+LAST-MODIFIED:20200216T145739Z
+SUMMARY:Conference planning
+UID:123456
+ORGANIZER:mailto:a@example.com
+ATTENDEE;PARTSTAT=ACCEPTED;CN=A:mailto:a@example.com
+ATTENDEE;RSVP=TRUE;CN=B:mailto:b@example.com
+BEGIN:PARTICIPANT
+PARTICIPANT-TYPE:ACTIVE:
+UID:v39lQGZvb2GFtcGxlLmNvbQ
+STRUCTURED-DATA;VALUE=URI:http://www.example.com/people/b.vcf
+LOCATION:At home
+END:PARTICIPANT
+END:VEVENT
+----

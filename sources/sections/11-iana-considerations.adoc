@@ -1,0 +1,105 @@
+== IANA Considerations
+
+=== Additional iCalendar Registrations
+
+==== Properties
+
+This document defines the following new iCalendar properties to be added to the
+registry defined in <<RFC5545,section=8.2.3>>:
+
+[cols="3,1,2",options="header"]
+|===
+|Property |Status |Reference
+|CALENDAR-ADDRESS |Current |RFCXXXX, <<calendar-address>>
+|LOCATION-TYPE |Current |RFCXXXX, <<loctype>>
+|PARTICIPANT-TYPE |Current |RFCXXXX, <<participant-type>>
+|RESOURCE-TYPE |Current |RFCXXXX, <<restype>>
+|STRUCTURED-DATA |Current |RFCXXXX, <<structured-data>>
+|STYLED-DESCRIPTION |Current |RFCXXXX, <<styled-description>>
+|===
+
+==== Parameters
+
+This document defines the following new iCalendar property parameters to be added
+to the registry defined in <<RFC5545,section=8.2.4>>:
+
+[cols="3,1,2",options="header"]
+|===
+|Property Parameter |Status |Reference
+|ORDER |Current |RFCXXXX, <<parameter_order>>
+|SCHEMA |Current |RFCXXXX, <<parameter_schema>>
+|DERIVED |Current |RFCXXXX, <<parameter_derived>>
+|===
+
+==== Components
+
+This document defines the following new iCalendar components to be added to the
+registry defined in <<RFC5545,section=8.3.1>>:
+
+[cols="3,1,2",options="header"]
+|===
+|Component |Status |Reference
+|PARTICIPANT |Current |RFCXXXX, <<participant>>
+|VLOCATION |Current |RFCXXXX, <<vlocation>>
+|VRESOURCE |Current |RFCXXXX, <<vresource>>
+|===
+
+=== New Registration Tables
+
+This section defines new registration tables for PARTICIPANT-TYPE and
+RESOURCE-TYPE values. These tables are updated using the same approaches laid
+down in <<RFC5545,section=8.2.1>>.
+
+This document creates new IANA registries for participant and resource types.
+
+IANA will maintain these registries and, following the policies outlined in
+<<RFC8126>>, new tokens are assigned after Expert Review. The Expert Reviewer
+will generally consult the IETF GeoPRIV working group mailing list or its
+designated successor. Updates or deletions of tokens from the registration follow
+the same procedures.
+
+The expert review should be guided by a few common sense considerations. For
+example, tokens should not be specific to a country, region, organization, or
+company; they should be well-defined and widely recognized. The expert's support
+of IANA will include providing IANA with the new token(s) when the update is
+provided only in the form of a schema, and providing IANA with the new schema
+element(s) when the update is provided only in the form of a token.
+
+To ensure widespread usability across protocols, tokens MUST follow the character
+set restrictions for XML Names [3].
+
+Each registration must include the name of the token and a brief description
+similar to the ones offered herein for the initial registrations contained this
+document:
+
+==== Participant Types
+
+The following table has been used to initialize the participant types registry:
+
+[cols="3,1,2",options="header"]
+|===
+|Participant Type |Status |Reference
+|ACTIVE |Current |RFCXXXX, <<participant-type>>
+|INACTIVE |Current |RFCXXXX, <<participant-type>>
+|SPONSOR |Current |RFCXXXX, <<participant-type>>
+|CONTACT |Current |RFCXXXX, <<participant-type>>
+|BOOKING-CONTACT |Current |RFCXXXX, <<participant-type>>
+|EMERGENCY-CONTACT |Current |RFCXXXX, <<participant-type>>
+|PUBLICITY-CONTACT |Current |RFCXXXX, <<participant-type>>
+|PLANNER-CONTACT |Current |RFCXXXX, <<participant-type>>
+|PERFORMER |Current |RFCXXXX, <<participant-type>>
+|SPEAKER |Current |RFCXXXX, <<participant-type>>
+|===
+
+==== Resource Types
+
+The following table has been used to initialize the resource types registry:
+
+[cols="3,1,2",options="header"]
+|===
+|Resource Type |Status |Reference
+|PROJECTOR |Current |RFCXXXX, <<restype>>
+|ROOM |Current |RFCXXXX, <<restype>>
+|REMOTE-CONFERENCE-AUDIO |Current |RFCXXXX, <<restype>>
+|REMOTE-CONFERENCE-VIDEO |Current |RFCXXXX, <<restype>>
+|===

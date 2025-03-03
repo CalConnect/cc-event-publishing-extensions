@@ -1,0 +1,365 @@
+[appendix]
+== metanorma-extension
+
+=== document history
+
+[EDITOR]
+====
+To be deleted on publication
+====
+
+[source,yaml]
+----
+- date:
+  - type: updated
+    value: 2021-03-25
+  edition: calext-v019
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Revert ABNF to RFC5545 format.
+
+        Add missing DERIVED parameter registration.
+
+        Fix small error in an example (missing space at start).
+- date:
+  - type: updated
+    value: 2021
+  edition: calext-v018
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Fix incorrect participant type property name in PARTICIPANT.
+
+        Allow parameters on LOCATION-TYPE.
+- date:
+  - type: updated
+    value: 2021-01-03
+  edition: calext-v017
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Remove STRUCTURED-LOCATION property, add VLOCATION component.
+
+        Remove STRUCTURED-RESOURCE property, add VRESOURCE component.
+
+        Make LOCATION-TYPE multi-valued property for location.
+
+        Make RESOURCE-TYPE multi-valued property for resource.
+
+        Tidy up abnf.
+- date:
+  - type: updated
+    value: 2019-10-09
+  edition: calext-v016
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Make LOCTYPE multi-valued.
+
+        Add all ATTENDEE scheduling parameters to CALENDAR-ADDRESS.
+- date:
+  - type: updated
+    value: 2019-10-08
+  edition: calext-v015
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: Address various DICUSS points.
+- date:
+  - type: updated
+    value: 2019-06-11
+  edition: calext-v014
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Definition of event and social calendaring.
+
+        Remove redefinition of SOURCE - use STRUCTURED-DATA.
+- date:
+  - type: updated
+    value: 2019-05-26
+  edition: calext-v013
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: Respond to various issues.
+- date:
+  - type: updated
+    value: 2019-02-28
+  edition: calext-v012
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: Fix styled-description example. Respond to various AD issues. Some typos.
+- date:
+  - type: updated
+    value: 2019-02-27
+  edition: calext-v011
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: Add DERIVED parameter for styled-description, RELATED parameter for structured-location
+- date:
+  - type: updated
+    value: 2018-08-30
+  edition: calext-v09
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: Sorted out inconsistencies in refs to 5546
+- date:
+  - type: updated
+    value: 2018-07-06
+  edition: calext-v08
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Add some text for equal ORDER values
+
+        Switched scheduleaddress to calendaraddress in participant abnf. Also added more properties
+
+        Fixed PARTICIPANT abnf
+- date:
+  - type: updated
+    value: 2017-10-11
+  edition: calext-v04
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Change SCHEDULE-ADDRESS to CALENDAR-ADDRESS
+
+        Explicitly broaden scope of SOURCE
+
+        Add initial registry for RESTYPE and move new tables into separate section.
+
+        Fix PARTTYPE/PARTICIPANT-TYPE inconsistency
+- date:
+  - type: updated
+    value: 2017-10-09
+  edition: calext-v03
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: Mostly typographical and other minor changes
+- date:
+  - type: updated
+    value: 2017-04-20
+  edition: calext-v02
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Add SCHEDULE-ADDRESS property
+
+        PARTICIPANT becomes a component rather than a property. Turn many of the former parameters into properties.
+
+        Use existing ATTENDEE property for scheduling.
+- date:
+  - type: updated
+    value: 2017-02-18
+  edition: calext-v01
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Change ASSOCIATE back to PARTICIPANT
+
+        PARTICIPANT becomes a component rather than a property. Turn many of the former parameters into properties.
+- date:
+  - type: updated
+    value: 2016-08
+  edition: calext-v00
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: Name changed - taken up by calext working group
+- date:
+  - type: updated
+    value: 2016-06-26
+  edition: v06
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Fix up abnf
+
+        change ref to ietf from daboo
+
+        take out label spec - use Cyrus spec
+- date:
+  - type: updated
+    value: 2016-06-14
+  edition: v05
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Remove GROUP and HASH. they can be dealt with elsewhere if desired
+
+        Change ORDER to integer >= 1.
+
+        Incorporate Structured-Data into this specification.
+- date:
+  - type: updated
+    value: 2014-02-01
+  edition: v04
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Added updates attribute.
+
+        Minor typos.
+
+        Resubmitted mostly to refresh the draft.
+- date:
+  - type: updated
+    value: 2013-03-06
+  edition: v03
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Replace PARTICIPANT with ASSOCIATE plus related changes.
+
+        Added section showing modifications to components.
+
+        Replace ID with GROUP and modify HASH.
+
+        Replace TITLE param with LABEL.
+
+        Fixed STYLED-DESCRIPTION in various ways, correct example.
+- date:
+  - type: updated
+    value: 2012-11-02
+  edition: v02
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Collapse sections with description of properties and the use cases into a section with sub-sections.
+
+        New section to describe relating properties.
+
+        Remove idref and upgrade hash to have the reference.
+
+        No default value types on properties.
+- date:
+  - type: updated
+    value: 2012-10-18
+  edition: v01
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Many changes.
+
+        SPONSOR and STRUCTURED-CONTACT are now in PARTICIPANT
+
+        Add a STRUCTURED-RESOURCE property
+
+        STYLED-DESCRIPTION to handle rich text
+
+        Much more...
+- date:
+  - type: updated
+    value: 2011-01-07
+  edition: v00
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: |
+        Remove MEDIA - it's going in the Cyrus RFC
+
+        Rename EXTENDED-... to STRUCTURED-...
+
+        Add TYPE parameter to SPONSOR
+- date:
+  - type: initial
+    value: 2007-10-19
+  edition: v00
+  contributor:
+  - person:
+      name:
+        abbreviation: MD
+        completename: Michael Douglass
+  amend:
+    - description: Initial version
+----

@@ -55,8 +55,8 @@ This document creates new IANA registries for participant and resource types.
 IANA will maintain these registries and, following the policies outlined in
 <<RFC8126>>, new tokens are assigned after Expert Review. The Expert Reviewer
 will generally consult the IETF GeoPRIV working group mailing list or its
-designated successor. Updates or deletions of tokens from the registration follow
-the same procedures.
+designated successor. Updates or deletions of tokens from the registration
+follow the same procedures.
 
 The expert review should be guided by a few common sense considerations. For
 example, tokens should not be specific to a country, region, organization, or
@@ -65,8 +65,8 @@ of IANA will include providing IANA with the new token(s) when the update is
 provided only in the form of a schema, and providing IANA with the new schema
 element(s) when the update is provided only in the form of a token.
 
-To ensure widespread usability across protocols, tokens MUST follow the character
-set restrictions for XML Names [3].
+To ensure widespread usability across protocols, tokens MUST follow the
+character set restrictions for XML Names [3].
 
 Each registration must include the name of the token and a brief description
 similar to the ones offered herein for the initial registrations contained this

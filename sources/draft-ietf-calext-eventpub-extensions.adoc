@@ -24,7 +24,7 @@ United States of America
 
 include::sections-ietf/00-abstract.adoc[]
 
-include::sections/01-introduction.adoc[]
+include::sections-ietf/01-introduction.adoc[]
 
 include::sections/02-components-and-properties.adoc[]
 

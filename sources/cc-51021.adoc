@@ -19,13 +19,15 @@
 
 include::sections/00-abstract.adoc[]
 
-include::sections/01-scope.adoc[]
-
 include::sections/01-introduction.adoc[]
+
+include::sections/01-scope.adoc[]
 
 include::sections/02-norm-refs.adoc[]
 
 include::sections/03-terms.adoc[]
+
+include::sections/03-conventions.adoc[]
 
 include::sections/02-components-and-properties.adoc[]
 

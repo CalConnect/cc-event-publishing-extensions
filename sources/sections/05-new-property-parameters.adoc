@@ -22,22 +22,23 @@ an integer greater than or equal to 1 that specifies the order with 1 being the
 first in the ordering.
 +
 When the parameter is absent, the default MUST be to interpret the property
-instance as being ordered last, that is, the property will appear after any other
-instances of the same property with any value of ORDER.
+instance as being ordered last, that is, the property will appear after any
+other instances of the same property with any value of ORDER.
 +
 When any ORDER parameters have the same value all the associated properties
 appear as a group within which there is no defined order.
 +
 Note that the value of this parameter is to be interpreted only in relation to
-values assigned to other corresponding instances of the same property in the same
-entity.
+values assigned to other corresponding instances of the same property in the
+same entity.
 +
 This parameter MUST NOT be applied to a property that does not allow multiple
 instances.
 
 Example uses:: The ORDER may be applied to the PARTICIPANT-TYPE property to
 indicate the relative importance of the participant, for example as a sponsor or
-a performer. For example, ORDER=1 could define the principal performer or soloist.
+a performer. For example, ORDER=1 could define the principal performer or
+soloist.
 
 [[parameter_schema]]
 === Schema
@@ -57,8 +58,8 @@ schemaparam    = "SCHEMA" "=" DQUOTE uri DQUOTE
 Description:: This property parameter SHOULD be specified on "STRUCTURED-DATA"
 properties. When present it provides identifying information about the nature of
 the content of the corresponding "STRUCTURED-DATA" property value. This can be
-used to supplement the media type information provided by the "FMTTYPE" parameter
-on the corresponding property.
+used to supplement the media type information provided by the "FMTTYPE"
+parameter on the corresponding property.
 
 Example::
 +

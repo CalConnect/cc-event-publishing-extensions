@@ -1,15 +1,15 @@
 == Security Considerations
 
-This specification extends <<RFC5545>> and makes further use of possibly linked data.
-While calendar data is not unique in this regard it is worth reminding
+This specification extends <<RFC5545>> and makes further use of possibly linked
+data. While calendar data is not unique in this regard it is worth reminding
 implementors of some of the dangers and safeguards.
 
 === URIs
 
-See <<RFC3986>> for a discussion of the security considerations relating to URIs.
-Because of the issues discussed there and below, clients SHOULD NOT follow URIs
-and fetch content automatically, and should only do so at the explicit request of
-the user.
+See <<RFC3986>> for a discussion of the security considerations relating to
+URIs. Because of the issues discussed there and below, clients SHOULD NOT follow
+URIs and fetch content automatically, and should only do so at the explicit
+request of the user.
 
 Fetching remote resources carries inherent risks. Connections must only be
 allowed on well known ports, using allowed protocols (generally just HTTP/HTTPS
@@ -18,10 +18,10 @@ access internal resources. Connecting to an external source reveals IP (and
 therefore generally location) information.
 
 A maliciously constructed iCalendar object may contain a very large number of
-URIs. In the case of published calendars with a large number of subscribers, such
-objects could be widely distributed. Implementations should be careful to limit
-the automatic fetching of linked resources to reduce the risk of this being an
-amplification vector for a denial-of-service attack.
+URIs. In the case of published calendars with a large number of subscribers,
+such objects could be widely distributed. Implementations should be careful to
+limit the automatic fetching of linked resources to reduce the risk of this
+being an amplification vector for a denial-of-service attack.
 
 === Malicious Content
 

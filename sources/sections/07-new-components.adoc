@@ -19,8 +19,8 @@ individuals or organizations, for example a soccer team, the spectators or the
 musicians.
 +
 --
-STRUCTURED-DATA properties if present may refer to definitions of the participant
-- such as a vCard.
+STRUCTURED-DATA properties if present may refer to definitions of the
+participant - such as a vCard.
 
 The CALENDAR-ADDRESS property if present will provide a cal-address. If an
 ATTENDEE property has the same value the participant is considered schedulable.
@@ -120,9 +120,9 @@ END:PARTICIPANT
 ==== Schedulable Participant
 
 A PARTICIPANT component may represent someone or something that needs to be
-scheduled as defined for ATTENDEE in <<RFC5545>> and <<RFC5546>>. The PARTICIPANT
-component may also represent someone or something that is NOT to receive
-scheduling messages.
+scheduled as defined for ATTENDEE in <<RFC5545>> and <<RFC5546>>. The
+PARTICIPANT component may also represent someone or something that is NOT to
+receive scheduling messages.
 
 For backwards compatibility with existing clients and servers when used to
 schedule events and tasks the ATTENDEE property MUST be used to specify the
@@ -137,7 +137,8 @@ A PARTICIPANT component is defined to be schedulable if:
 * That property value is the same as the value for an ATTENDEE property.
 
 If both of these conditions apply then the participant defined by the value of
-the URL property will take part in scheduling operations as defined in <<RFC5546>>.
+the URL property will take part in scheduling operations as defined in
+<<RFC5546>>.
 
 An appropriate use for the PARTICIPANT component in scheduling would be to store
 SEQUENCE and DTSTAMP properties associated with replies from each ATTENDEE. A
@@ -149,8 +150,8 @@ of meeting times when participants are in different timezones.
 
 Component name:: VLOCATION
 
-Purpose:: This component provides rich information about the location of an event
-using the structured data property or optionally a plain text typed value.
+Purpose:: This component provides rich information about the location of an
+event using the structured data property or optionally a plain text typed value.
 
 Conformance:: This component can be specified multiple times in a "VEVENT",
 "VTODO", "VJOURNAL", "VFREEBUSY" or "PARTICIPANT" calendar component.
@@ -209,8 +210,8 @@ END:VLOCATION
 
 Component name:: VRESOURCE
 
-Purpose:: This component provides a typed reference to external information about
-a resource or optionally a plain text typed value. Typically a resource is
+Purpose:: This component provides a typed reference to external information
+about a resource or optionally a plain text typed value. Typically a resource is
 anything that might be required or used by a calendar entity and possibly has a
 directory entry.
 
@@ -218,7 +219,8 @@ Conformance:: This component can be specified multiple times in a "VEVENT",
 "VTODO", "VJOURNAL", "VFREEBUSY" or "PARTICIPANT" calendar component.
 
 Description:: When used in a component this component provides information about
-resources used for the event such as rooms, projectors, conferencing capabilities.
+resources used for the event such as rooms, projectors, conferencing
+capabilities.
 +
 The RESOURCE-TYPE value registry provides a place in which resource types may be
 registered.
@@ -254,7 +256,8 @@ resprop      = *(
 
 The NAME property is defined in <<RFC7986>>
 
-Example:: The following is an example of this component. It refers to a projector.
+Example:: The following is an example of this component. It refers to a
+projector.
 +
 [source%unnumbered]
 ----

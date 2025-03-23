@@ -1,1 +1,14 @@
 == Terms and Definitions
+
+=== Event
+
+When the (perhaps with a capitalised 'E') word 'event' is used we are referring
+to gatherings, formal or informal. For example a sports event, a party or a
+concert.
+
+=== Social Calendaring
+
+Historically, calendar data and scheduling has been heavily biased towards
+meetings in a corporate environment. Some of the features defined in this
+document are to support a more informal, i.e. social, model. For example, we may
+want to record who is participating in a public event.

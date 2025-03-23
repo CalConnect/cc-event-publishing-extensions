@@ -9,8 +9,8 @@ additional related information for the user.
 As always, clients should exercise caution in following references to external
 data.
 
-The <<RFC5545>> LOCATION property provides only an unstructured single text value
-for specifying the location where an event (or task) will occur. This is
+The <<RFC5545>> LOCATION property provides only an unstructured single text
+value for specifying the location where an event (or task) will occur. This is
 inadequate for use cases where structured location information (e.g. address,
 region, country, postal code) is required or preferred, and limits widespread
 adoption of iCalendar in those settings.
@@ -34,8 +34,8 @@ in the event, for example a school sports team, and the inactive participants,
 for example the parents.
 
 The PARTICIPANT component can be used to provide useful extra data about an
-attendee. For example a location inside the PARTICIPANT gives the actual location
-of a remote attendee. (But see the note about privacy.)
+attendee. For example a location inside the PARTICIPANT gives the actual
+location of a remote attendee. (But see the note about privacy.)
 
 Alternatively the PARTICIPANT component can be used to provide a reference -
 perhaps the address for mailing lists.
@@ -53,8 +53,9 @@ performer, stage hands etc. In addition there are sponsors and various contacts
 to be provided. There will also be a number of related locations. A number of
 events can be created, all of which relate to the performance in different ways.
 
-There may be an iTIP <<RFC5546>> meeting request for the piano tuner who will arrive
-before the performance. Other members of staff may also receive meeting requests.
+There may be an iTIP <<RFC5546>> meeting request for the piano tuner who will
+arrive before the performance. Other members of staff may also receive meeting
+requests.
 
 An event can also be created for publication which will have a PARTICIPANT
 component for the pianist providing a reference to vCard <<RFC2426>> information
@@ -70,13 +71,14 @@ a flight the PARTICIPANT component can be used to provide references to
 businesses at the airports and to car hire businesses at the destination.
 
 The embedded location information can guide the traveler at the airport or to
-their final destination. The contact information can provide detailed information
-about the booking agent, the airlines, car hire companies and the hotel.
+their final destination. The contact information can provide detailed
+information about the booking agent, the airlines, car hire companies and the
+hotel.
 
 ==== Reserving facilities
 
-For a meeting, the size of a room and the equipment needed depends to some extent
-on the number of attendees actually in the room.
+For a meeting, the size of a room and the equipment needed depends to some
+extent on the number of attendees actually in the room.
 
 A meeting may have many attendees none of which are co-located. The current
 ATTENDEE property does not allow for the addition of such meta-data. The

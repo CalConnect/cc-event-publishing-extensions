@@ -13,9 +13,9 @@ Purpose:: To specify the type(s) of a location.
 Value type:: The value type for this property is TEXT. The allowable values are
 defined below.
 
-Description:: This property MAY be specified in VLOCATION components and provides
-a way to differentiate multiple locations. For example, it allows event producers
-to provide location information for the venue and the parking.
+Description:: This property MAY be specified in VLOCATION components and
+provides a way to differentiate multiple locations. For example, it allows event
+producers to provide location information for the venue and the parking.
 
 Format Definition:: This property is defined by the following notation:
 +
@@ -31,9 +31,9 @@ loctypeparam   = *(";" other-param)
 Multiple values may be used if the location has multiple purposes, for example a
 hotel and a restaurant.
 +
-Values for this parameter are taken from the values defined in <<RFC4589,section=3>>.
-New location types SHOULD be registered in the manner laid down in section 5 of
-that specification.
+Values for this parameter are taken from the values defined in
+<<RFC4589,section=3>>. New location types SHOULD be registered in the manner
+laid down in section 5 of that specification.
 
 [[participant-type]]
 === Participant Type
@@ -47,11 +47,12 @@ defined below.
 
 Property Parameters:: Non-standard parameters can be specified on this property.
 
-Conformance:: This property MUST be specified once within a PARTICIPANT component.
+Conformance:: This property MUST be specified once within a PARTICIPANT
+component.
 
-Description:: This property defines the type of participation in events or tasks.
-Participants can be individuals or organizations, for example a soccer team, the
-spectators, or the musicians.
+Description:: This property defines the type of participation in events or
+tasks. Participants can be individuals or organizations, for example a soccer
+team, the spectators, or the musicians.
 
 Format Definition:: This property is defined by the following notation:
 +
@@ -88,13 +89,14 @@ described here:
 
 ACTIVE:: A participant taking an active role - for example a team member.
 
-INACTIVE:: A participant taking an inactive role - for example an audience member.
+INACTIVE:: A participant taking an inactive role - for example an audience
+member.
 
 SPONSOR:: A sponsor of the event. The ORDER parameter may be used with this
 participant type to define the relative order of multiple sponsors.
 
-CONTACT:: Contact information for the event. The ORDER parameter may be used with
-this participant type to define the relative order of multiple contacts.
+CONTACT:: Contact information for the event. The ORDER parameter may be used
+with this participant type to define the relative order of multiple contacts.
 
 BOOKING-CONTACT:: Contact information for reservations or payment
 
@@ -106,8 +108,8 @@ PLANNER-CONTACT:: Contact for the event planner or organizer
 
 PERFORMER:: A performer - for example the soloist or the accompanist. The ORDER
 parameter may be used with this participant type to define the relative order of
-multiple performers. For example, ORDER=1 could define the principal performer or
-soloist.
+multiple performers. For example, ORDER=1 could define the principal performer
+or soloist.
 
 SPEAKER:: Speaker at an event
 
@@ -138,8 +140,8 @@ restypevalue  = ("ROOM"
 restypeparam   = *(";" other-param)
 ----
 
-Description:: This property MAY be specified in VRESOURCE components and provides
-a way to differentiate multiple resources.
+Description:: This property MAY be specified in VRESOURCE components and
+provides a way to differentiate multiple resources.
 
 The registered values are described below. New resource types SHOULD be
 registered in the manner laid down in this specification.
@@ -161,14 +163,15 @@ Purpose:: To specify the calendar address for a participant.
 
 Value type:: CAL-ADDRESS
 
-Property Parameters:: IANA-registered, or non-standard property parameters can be
-specified on this property.
+Property Parameters:: IANA-registered, or non-standard property parameters can
+be specified on this property.
 
-Conformance:: This property MAY be specified once within a PARTICIPANT component.
+Conformance:: This property MAY be specified once within a PARTICIPANT
+component.
 
-Description:: This property provides a calendar user address for the participant.
-If there is an ATTENDEE property with the same value then the participant is
-schedulable.
+Description:: This property provides a calendar user address for the
+participant. If there is an ATTENDEE property with the same value then the
+participant is schedulable.
 
 Format Definition:: This property is defined by the following notation:
 +
@@ -188,9 +191,9 @@ Property name:: STYLED-DESCRIPTION
 Purpose:: This property provides for one or more rich-text descriptions to
 replace that provided by the DESCRIPTION property.
 
-Value type:: There is no default value type for this property. The value type can
-be set to URI or TEXT. Other text-based value types can be used when defined in
-the future. Clients MUST ignore any properties with value types they do not
+Value type:: There is no default value type for this property. The value type
+can be set to URI or TEXT. Other text-based value types can be used when defined
+in the future. Clients MUST ignore any properties with value types they do not
 understand.
 
 Property Parameters:: IANA-registered, non-standard, id, alternate text
@@ -198,7 +201,8 @@ representation, format type, derived and language property parameters can be
 specified on this property.
 
 Conformance:: The property can be specified multiple times in the "VEVENT",
-"VTODO", "VJOURNAL", "VFREEBUSY", "PARTICIPANT", or "VALARM" calendar components.
+"VTODO", "VJOURNAL", "VFREEBUSY", "PARTICIPANT", or "VALARM" calendar
+components.
 +
 If it does appear more than once there MUST be exactly one instance of the
 property with no DERIVED parameter or DERIVED=FALSE. All others MUST have
@@ -281,8 +285,8 @@ Property Name:: STRUCTURED-DATA
 Purpose:: This property specifies ancillary data associated with the calendar
 component.
 
-Value Type:: There is no default value type for this property. The value type can
-be set to TEXT, BINARY or URI
+Value Type:: There is no default value type for this property. The value type
+can be set to TEXT, BINARY or URI
 
 Property Parameters:: IANA-registered, non-standard, inline encoding and value
 data type property parameters can be specified on this property. The format type
@@ -295,8 +299,8 @@ components.
 
 Description:: The existing properties in iCalendar cover key elements of events
 and tasks such as start time, end time, location, summary, etc. However,
-different types of events often have other specific "fields" that it is useful to
-include in the calendar data. For example, an event representing an airline
+different types of events often have other specific "fields" that it is useful
+to include in the calendar data. For example, an event representing an airline
 flight could include the airline, flight number, departure and arrival airport
 codes, check-in and gate-closing times etc. As another example, a sporting event
 might contain information about the type of sport, the home and away teams, the
@@ -312,10 +316,10 @@ By using standard schemas, interoperability can be improved between calendar
 clients and non-calendaring systems that wish to generate or process the data.
 +
 This property allows the direct inclusion of ancillary data whose schema is
-defined elsewhere. This property also includes parameters to clearly identify the
-type of the schema being used so that clients can quickly and easily spot what is
-relevant within the calendar data and present that to users or process it within
-the calendaring system.
+defined elsewhere. This property also includes parameters to clearly identify
+the type of the schema being used so that clients can quickly and easily spot
+what is relevant within the calendar data and present that to users or process
+it within the calendaring system.
 +
 iCalendar does support an "ATTACH" property which can be used to include
 documents or links to documents within the calendar data. However, that property

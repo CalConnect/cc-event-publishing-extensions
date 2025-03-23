@@ -16,3 +16,20 @@ client and server, and between servers). Formats such as vCard <<RFC2426>> are
 likely to be most useful to the receivers of such events as they may be used in
 other applications - such as address books.
 
+=== Conventions Used in This Document
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY" and "OPTIONAL" in this
+document are to be interpreted as described in BCP 14 <<RFC2119>> <<RFC8174>>
+when, and only when, they appear in all capitals, as shown here.
+
+=== Terms Used in This Document
+
+Event:: When the (perhaps with a capitalised 'E') word 'event' is used we are
+referring to gatherings, formal or informal. For example a sports event, a party
+or a concert.
+
+Social Calendaring:: Historically, calendar data and scheduling has been heavily
+biased towards meetings in a corporate environment. Some of the features defined
+in this document are to support a more informal, i.e. social, model. For
+example, we may want to record who is participating in a public event.

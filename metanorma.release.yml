@@ -1,3 +1,5 @@
+# metanorma.release.yml — cc-event-publishing-extensions
+
 documents:
-  - source: sources/cc-51021.adoc
-  - source: sources/draft-ietf-calext-eventpub-extensions.adoc
+  - pattern: "cc-*"
+    channels: [public/standards]
